@@ -14,3 +14,13 @@ def count_num_characters(book):
         else:
             book_dict[char.lower()] = 1
     return book_dict
+
+def sort_dicts(num_char):
+    sorting_dict = []
+    for character, count in num_char.items():
+        sorting_dict.append({"char": character,"num": count})
+    sorting_dict.sort(reverse=True, key=sort_on)
+    return sorting_dict
+
+def sort_on(dictionary):
+    return dictionary["num"]
